@@ -1,5 +1,5 @@
 export default async function Todos(props: any) {
-  const res = await fetch(`http://127.0.0.1:9999/todos/${props.params.id}`).then(resp=>resp.json())
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/todos/${props.params.id}`).then(resp=>resp.json())
 
   return (
     <>

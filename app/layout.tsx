@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({children,}: { children: React.ReactNode }) {
-    const todos = await fetch("http://127.0.0.1:9999/todos").then((resp) => resp.json());
-    const users = await fetch("http://127.0.0.1:9999/users").then((resp) => resp.json());
+    const todos = await fetch("http://127.0.0.1:9999/todos", {cache:'no-cache'}).then((resp) => resp.json());
+    const users = await fetch("http://127.0.0.1:9999/users", {cache:'no-cache'}).then((resp) => resp.json());
 
   return (
     <html>
@@ -38,6 +38,7 @@ export default async function RootLayout({children,}: { children: React.ReactNod
         </div>
 
         {children}
+
 
         <Control/>
       </body>
